@@ -14,7 +14,7 @@ hero:
       text: 关于
       link: /About
     - theme: alt
-      text: 精神病院维基项目
+      text: 精神病院维基项目 ↗️
       link: https://wiki.psychreview.su
 ---
 

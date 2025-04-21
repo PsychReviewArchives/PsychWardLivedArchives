@@ -14,7 +14,7 @@ hero:
       text: About
       link: /en/About
     - theme: alt
-      text: Project Psych Ward Wiki
+      text: Project Psych Ward Wiki ↗️
       link: https://wiki.psychreview.su
 ---
 
