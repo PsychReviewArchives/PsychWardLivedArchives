@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Cantarell-WebFont";
+    font-display: swap;
+    src: url("https://webfont.psychreview.su/Cantarell-VF.otf") format("opentype-variations");
+}
+
+@font-face {
+    font-family: DroidSansMono-WebFont;
+    font-display: swap;
+    src: url("https://webfont.psychreview.su/DroidSansMono.ttf");
+}
+
+:root {
+    --vp-font-family-base: Cantarell-WebFont, sans-serif;
+    --vp-font-family-mono: DroidSansMono-WebFont, monospace, sans-serif;
+}
