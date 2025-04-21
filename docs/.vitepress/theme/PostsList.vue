@@ -3,26 +3,45 @@ import { data as posts } from './posts.data.mjs'
 </script>
 
 <template>
-  <table>
-    <thead>
-      <tr>
-        <th>日期</th>
-        <th>文章</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="post of posts">
-        <td>{{ post.date.string }}</td>
-        <td><a :href="post.url">{{ post.title }}</a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="post-list">
+    <div
+      class="post-item"
+      v-for="(post, index) in posts"
+      :key="post.url"
+    >
+      <div 
+        class="post-date" 
+        :class="{ hidden: index !== 0 && post.date.string === posts[index - 1].date.string }"
+      >
+        {{ post.date.string }}
+      </div>
+      <div class="post-title">
+        <a :href="post.url">{{ post.title }}</a>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style>
-table,
-th,
-td {
-  border: 0 !important;
+<style scoped>
+.post-list {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.post-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  line-height: 2rem;
+}
+
+.post-date {
+  text-align: right;
+  font-feature-settings: "tnum" on;
+}
+
+.post-date.hidden {
+  visibility: hidden;
 }
 </style>
